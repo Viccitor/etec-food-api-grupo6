@@ -25,5 +25,9 @@ public class AvaliacaoController {
         }
         return null;
     }
+    @PostMapping
+    public void cadastrar(@RequestBody Avaliacao avaliacao) {
+        avaliacaoRepository.save(avaliacao);
+    }
 
 }
