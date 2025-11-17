@@ -17,5 +17,13 @@ public class AvaliacaoController {
     public List<Avaliacao> listar() {
         return avaliacaoRepository.findAll();
     }
+    @GetMapping("/{id}")
+    public Avaliacao buscarPorId(@PathVariable Long id) {
+        var avaliacao = avaliacaoRepository.findById(id);
+        if (avaliacao.isPresent()) {
+            return avaliacao.get();
+        }
+        return null;
+    }
 
 }
