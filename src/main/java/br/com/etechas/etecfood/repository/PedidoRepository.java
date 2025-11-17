@@ -1,11 +1,9 @@
 package br.com.etechas.etecfood.repository;
 
 import br.com.etechas.etecfood.entity.Pedido;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface PedidoRepository {
-    List<Pedido> findAll();
-
-    Object findById(Long id);
+@Repository
+public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 }
