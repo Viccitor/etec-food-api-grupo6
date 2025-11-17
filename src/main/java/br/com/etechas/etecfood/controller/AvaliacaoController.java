@@ -29,5 +29,13 @@ public class AvaliacaoController {
     public void cadastrar(@RequestBody Avaliacao avaliacao) {
         avaliacaoRepository.save(avaliacao);
     }
-
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id) {
+        var avaliacao = avaliacaoRepository.findById(id);
+        if (avaliacao.isPresent()) {
+            avaliacaoRepository.delete(avaliacao.get());
+        }
+    }
 }
+
+
