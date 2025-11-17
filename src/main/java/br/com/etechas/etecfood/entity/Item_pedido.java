@@ -28,7 +28,8 @@ public class Item_pedido {
     @Column(name = "QUANTIDADE")
     private Integer quantidade;
 
-    @Column(name = "OBSERVACAO")
+    
+    @Column(name = "OBSERVACAO" )
     private String observacao;
 
     @ManyToOne
