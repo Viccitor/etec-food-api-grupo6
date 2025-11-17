@@ -27,4 +27,9 @@ public class PedidoController {
         }
         return null;
     }
+    @PostMapping
+    public void cadastrar(@RequestBody Pedido pedido) {
+        pedidoRepository.save(pedido);
+    }
+
 }
