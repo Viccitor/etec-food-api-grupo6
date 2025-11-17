@@ -31,5 +31,12 @@ public class PedidoController {
     public void cadastrar(@RequestBody Pedido pedido) {
         pedidoRepository.save(pedido);
     }
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id) {
+        var pedido = pedidoRepository.findById(id);
+        if (pedido.isPresent()) {
+            pedidoRepository.delete(pedido.get());
+        }
+    }
 
 }
