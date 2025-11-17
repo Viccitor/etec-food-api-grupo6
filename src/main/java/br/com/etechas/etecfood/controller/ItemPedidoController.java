@@ -31,4 +31,10 @@ public class ItemPedidoController {
         }
         return null;
     }
+
+    @PostMapping
+    public void cadastrar(@RequestBody Item_pedido itemPedido)
+    {
+        itemPedidoRepository.save(itemPedido);
+    }
 }
