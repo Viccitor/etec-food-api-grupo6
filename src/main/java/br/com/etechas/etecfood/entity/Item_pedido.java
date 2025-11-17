@@ -21,9 +21,9 @@ public class Item_pedido {
     @Column(name = "OBSERVACAO")
     private String obersavacao;
 
-    @OneToMany
-    @Column(name = "PEDIDO_ID")
-    private Pedido pedidoId;
+    @ManyToOne
+    @JoinColumn(name = "PEDIDO_ID")
+    private Pedido pedido;
 
     @ManyToOne
     @Column(name = "id_itemcardapio")
