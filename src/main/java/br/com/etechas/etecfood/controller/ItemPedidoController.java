@@ -37,4 +37,14 @@ public class ItemPedidoController {
     {
         itemPedidoRepository.save(itemPedido);
     }
+
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Long id)
+    {
+        var item = itemPedidoRepository.findById(id);
+        if(item.isPresent())
+        {
+            itemPedidoRepository.delete(item.get());
+        }
+    }
 }
